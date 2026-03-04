@@ -561,7 +561,7 @@
   </button>
   <div class="nav-center">
     <div class="dots-row" id="dotsRow"></div>
-    <div class="nav-label" id="navLabel"></div>
+
   </div>
   <button class="nav-btn btn-next" id="btnNext" onclick="navigate(1)">
     Siguiente →
@@ -620,7 +620,7 @@ const steps = [
         <div class="action-text">Abre el navegador de tu teléfono o computador (Chrome, Firefox o cualquier otro) y escribe esta dirección:</div>
       </div>
       <div class="screen-sim">
-        <span class="url">https://test-coffee-tracing.us-la-01.awcompute.com/</span>
+        <a class="url" href="https://test-coffee-tracing.us-la-01.awcompute.com/" target="_blank" rel="noopener noreferrer" style="color:#80cbc4; text-decoration:underline; word-break:break-all;">https://test-coffee-tracing.us-la-01.awcompute.com/</a>
       </div>
       <div class="why-block">
         Esta dirección es como la "puerta de entrada" a la plataforma. Siempre debes escribirla exactamente igual.
@@ -1292,7 +1292,7 @@ function renderStep(idx, direction) {
   pb.style.width = pct + '%';
 
   // Etiqueta
-  label.textContent = `Paso ${idx + 1} de ${TOTAL}`;
+  if (label) label.textContent = `Paso ${idx + 1} de ${TOTAL}`;
 
   // Botones
   prev.disabled = (idx === 0);
